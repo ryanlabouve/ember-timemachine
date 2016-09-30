@@ -4,31 +4,53 @@ import timemachine from 'timemachine';
 
 moduleForAcceptance('Acceptance | blessed path');
 
-test('visiting without patched date', function(assert) {
+test('the date object works', function(assert) {
+  assert.expect(1);
   visit('/');
 
   let currentDate = new Date();
-  let oldDate = new Date();
-  oldDate.setYears(2010);
 
   andThen(function() {
-    find('.listed-date').text(),
-    currentDate.toDateString();
+    assert.equal(
+      find('.listed-date').text().trim(),
+      currentDate.toDateString(),
+      `We don't nuke the current date by default`
+    );
+  });
+});
+
+test('We don\'t obliterate the date', function(assert) {
+  assert.expect(1);
+  visit('/');
+
+  andThen(function() {
+
+    timemachine.reset();
+    let currentDate = new Date();
+    assert.equal(
+      find('.listed-date').text().trim(),
+      currentDate.toDateString(),
+      `We don't nuke the current date by default`
+    );
   });
 });
 
 test('visiting with patched date', function(assert) {
+  assert.expect(1);
   visit('/');
 
   let oldDate = new Date();
-  oldDate.setYears(2010);
+  oldDate.setYear(2010);
 
   timemachine.config({
     dateString: oldDate.toDateString()
   });
 
   andThen(function() {
-    find('.listed-date').text(),
-    currentDate.toDateString();
+    assert.equal(
+      find('.listed-date').text().trim(),
+      oldDate.toDateString(),
+      'We successfully reset the old date'
+    );
   });
 });

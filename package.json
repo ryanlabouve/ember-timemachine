@@ -20,6 +20,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
     "ember-ajax": "^2.0.1",
+    "ember-browserify": "1.1.13",
     "ember-cli": "2.7.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-dependency-checker": "^1.2.0",
@@ -44,7 +45,8 @@
     "ember-addon"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6"
+    "ember-cli-babel": "^5.1.6",
+    "timemachine": "ryanlabouve/timemachine#faabc5832750289e4f348d5dfe5293ecf01053f0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
