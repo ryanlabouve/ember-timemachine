@@ -1,6 +1,34 @@
 # Ember-timemachine
 
-This README outlines the details of collaborating on this Ember addon.
+Ready to hunt down those pesky date / time specific bugs?
+
+This is an ember addon that wraps
+[https://github.com/schickling/timemachine](https://github.com/schickling/timemachine)
+in a way that doesn't make your app party like it's 1969.
+
+## How to party like it's 1969
+
+Install ember-timemachine:
+
+`ember install ember-timemachine`
+
+Use it:
+
+```
+import timemachine from 'timemachine';
+
+timemachine.config({
+  dateString: 'December 25, 1969 13:12:59'
+});
+
+console.log(new Date());
+```
+
+and stop partying when you want with:
+
+`timemachine.reset();`
+
+
 
 ## Installation
 
