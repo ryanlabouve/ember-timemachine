@@ -28,6 +28,12 @@ and stop partying when you want with:
 
 `timemachine.reset();`
 
+## Are you testing?
+
+Me too! So, this stops the default timer from ticking... which means Backburner
+can get frozen in time. So, you need to set 'tick: true;' when you configure.
+
+I'll probably add in some helpers or better docs to discuss this in the future.
 
 
 ## Installation
