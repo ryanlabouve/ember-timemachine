@@ -1,9 +1,11 @@
-/* globals timemachine */
+(function() {
+  /* globals timemachine */
 
-define('timemachine', [], function() {
-  "use strict";
+  define('timemachine', [], function() {
+    "use strict";
 
-  return {
-    'default': timemachine
-  };
-});
+    return {
+      'default': timemachine
+    };
+  });
+})();
